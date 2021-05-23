@@ -31,6 +31,14 @@ class FormController extends Controller
         ], 200);
     }
 
+    public function read()
+    {
+        $student = Student::all();
+        return response()->json([
+            'student' => $student
+        ], 201);
+    }
+
     public function edit($id)
     {
         $student = Student::findOrFail($id);

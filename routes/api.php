@@ -29,7 +29,10 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::delete('/delete/{id}', [FormController::class, 'delete']);
 
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::get('/read', [FormController::class, 'read']);
     
 });
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
